@@ -1,0 +1,515 @@
+/* [Font] Rubik (300-700) */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;700&display=swap');
+/* [Font] Inter (400-500-700) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+/* [Font] Nunito (700) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+:root {
+    /* Main colors */
+    --ocean: #237195;
+    --midnight: #193E50;
+    --garden: #4B8F0D;
+    /* Monocromatics */
+    --white-1: #F9FAFB;
+    --white-2: #E4E4E7;
+    --gray-1: #828282;
+    --gray-2: #3F3F46;
+    --black: #18181B;
+    /* Utils */
+    --shadow-color: rgba(0, 0, 0, .2);
+    --height-navbar: 103.5px;
+    --width-sections: 992px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--white-1);
+}
+
+h2, h3 {
+    color: var(--midnight);
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Rubik', sans-serif;
+}
+
+.dark-filter {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(4px);
+}
+
+.woman-cellphone {
+    position: absolute;
+    top: 0; right: 0;
+    z-index: -1;
+}
+
+.logo, 
+.list-pages li, 
+.ico-gps, 
+.ico-lupa,
+.card button,
+.social-media svg,
+.btn-whatsapp,
+.modal-sucesso button,
+.back-to-top {
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 76.5px;
+    padding: 32px 120px;
+}
+
+.list-pages {
+    display: flex;
+    gap: 38px;
+    color: var(--white-1);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.list-pages li {
+    width: max-content;
+    display: flex;
+    position: relative;
+}
+
+.list-pages li::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -8px; left: 0;
+    border-radius: 999px;
+    background-color: var(--garden);
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+
+.list-pages li:hover::after {
+    transform: scaleX(1);
+}
+
+.page main {
+    margin-inline: 120px;
+}
+
+.page main section:not(:first-child) {
+    margin-inline: auto;
+}
+
+section.presentation {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 220px;
+}
+
+.intro {
+    width: 486px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.intro span {
+    color: var(--garden);
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.intro .content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.intro .title {
+    color: var(--ocean);
+    font-family: 'Rubik', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.intro .desc {
+    color: var(--gray-1);
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.ico-gps, .ico-lupa {
+    position: absolute;
+}
+
+.ico-gps {
+    left: 16px; top: 12px;
+}
+
+.ico-lupa {
+    right: 16px; top: 12px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 47.5px;
+    border-radius: 62.78px;
+    color: var(--gray-1);
+    background-color: rgb(25, 62, 80, .15);
+}
+
+.search-box input::placeholder {
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+}
+
+section.explore-mais {
+    width: var(--width-sections);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 224px;
+    scroll-margin-top: var(--height-navbar);
+}
+
+.explore-mais div.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.explore-mais h2.title {
+    font-size: 48px;
+    line-height: 72px;
+}
+
+.card {
+    width: 100%;
+    height: 524px;
+    display: flex;
+    border-radius: 24px;
+    background-color: #FFF;
+    box-shadow: 0 0 70px var(--shadow-color);
+    overflow: hidden;
+}
+
+.card .info, .card .img {
+    width: 50%;
+    max-width: 496px;
+    max-height: 524px;
+}
+
+.card .info {
+    width: 406.68px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+
+.card .title {
+    font-size: 40px;
+}
+
+.card .desc, .contact-us .subtitle {
+    color: var(--gray-1);
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.card button {
+    width: max-content;
+    color: var(--midnight);
+    background-color: transparent;
+    border: 1px solid var(--midnight);
+    border-radius: 999px;
+    padding: 8px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 36px;
+    transition: color 300ms, background 300ms;
+}
+
+.card button:hover {
+    color: var(--white-1);
+    background-color: var(--midnight);
+}
+
+.card .img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mapa-cobertura .img {
+    background-image: url("../img/map.png");
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, .15);
+}
+
+.perfil-estab .img {
+    background-image: url("../img/cellphone.jpg");
+}
+
+.modo-offline .img {
+    background-image: url("../img/offline.jpg");
+    filter: grayscale(100);
+}
+
+section.contact-us {
+    width: var(--width-sections);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    scroll-margin-top: var(--height-navbar);
+}
+
+.contact-us .text {
+    width: 406px;
+}
+
+.contact-us .title {
+    font-size: 48px;
+    line-height: 56px;
+}
+
+.contact-us .title,
+.contact-us .contacts {
+    color: var(--midnight);
+}
+
+.contact-us .left,
+.contact-us .left .text,
+.contact-us .contacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us .left {
+    gap: 24px;
+}
+
+.contact-us .left .text,
+.contact-us .contacts > div {
+    gap: 12px;
+}
+
+.btn-whatsapp {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 4px;
+    color: var(--white-1);
+    background-color: var(--garden);
+    font-weight: 500;
+    transition: color 300ms, 
+                background 300ms, 
+                outline 300ms;
+}
+
+.btn-whatsapp:visited {
+    color: var(--white-1);
+}
+
+.btn-whatsapp:hover {
+    outline: 1px solid var(--garden);
+    color: var(--garden);
+    background-color: transparent;
+}
+
+.btn-whatsapp svg path {
+    transition: fill 300ms;
+}
+
+.btn-whatsapp:hover svg path {
+    fill: var(--garden);
+}
+
+.contact-us .contacts {
+    gap: 32px;
+}
+
+.contact-us .contacts > div {
+    display: flex;
+    align-items: center;
+}
+
+.page footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 224px auto 83px auto;
+}
+
+.social-media {
+    width: max-content;
+    display: flex;
+    gap: 24px;
+    margin: 0 auto;
+}
+
+.social-media svg {
+    transition: scale 300ms;
+}
+
+.social-media svg:hover {
+    scale: 1.15;
+}
+
+.disclaimer {
+    color: var(--gray-1);
+    text-align: center;
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    right: 120px; bottom: 83px;
+}
+
+/* Modal */
+.modal-sucesso {
+    width: 992px;
+    height: fit-content;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    position: fixed;
+    z-index: 40;
+    inset: 0;
+    margin: auto;
+    padding: 52px 48px;
+    border-radius: 24px;
+    background-color: #FFF;
+}
+
+.modal-sucesso .btn-close {
+    position: absolute;
+    top: 48px; right: 52px;
+    background-color: transparent;
+}
+
+.modal-sucesso header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.modal-sucesso h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--ocean);
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+}
+
+.modal-sucesso h2 {
+    color: var(--gray-1);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.modal-sucesso h2 span {
+    color: var(--garden);
+    font-weight: 700;
+}
+
+.modal-sucesso main {
+    width: 100%;
+    height: 200px;
+    border: .25px solid var(--midnight);
+    border-radius: 4px;
+    background-image: url("../img/map.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal-sucesso main:hover {
+    cursor: all-scroll;
+}
+
+.modal-sucesso footer {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.btn-dwnl-app, .btn-ver-mapa {
+    padding: 18px 24px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 300ms, background 300ms, border 300ms;
+}
+
+.btn-dwnl-app {
+    color: var(--white-1);
+    background-color: var(--ocean);
+    text-transform: uppercase;
+}
+
+.btn-ver-mapa {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    border: 2px solid var(--midnight);
+    color: var(--midnight);
+    background-color: transparent;
+}
+
+.btn-dwnl-app:hover {
+    background-color: var(--midnight);
+}
+
+.btn-ver-mapa:hover {
+    border: 2px solid var(--ocean);
+    color: var(--ocean);
+}
+
+/* Classes utilitárias */
+.scroll-down {
+    backdrop-filter: blur(32px);
+    box-shadow: 0 0 70px var(--shadow-color);
+}
+
+.contrast {
+    color: var(--midnight);
+}
+
+.visible {
+    display: flex;
+}
