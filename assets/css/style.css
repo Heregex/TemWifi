@@ -338,6 +338,9 @@ section.contact-us {
                 outline 300ms;
 }
 
+.btn-whatsapp:link,
+.btn-whatsapp:hover,
+.btn-whatsapp:active,
 .btn-whatsapp:visited {
     color: var(--white-1);
 }
